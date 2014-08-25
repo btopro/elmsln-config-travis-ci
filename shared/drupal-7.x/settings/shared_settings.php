@@ -1,7 +1,7 @@
 <?php
 # env indicator - useful when working on multiple environments
 $conf['environment_indicator_overwrite'] = TRUE;
-$conf['environment_indicator_overwritten_name'] = 'Dev: Vagrant';
+$conf['environment_indicator_overwritten_name'] = 'Dev: Travis';
 $conf['environment_indicator_overwritten_color'] = '#42b96a';
 # APC cache backend
 #$conf['apc_show_debug'] = TRUE;
@@ -48,3 +48,15 @@ $conf['cache_default_class']    = 'DrupalDatabaseCache';
 $conf['cache_class_cache_cis_connector'] = 'DrupalDatabaseCache';
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 */
+
+// this is assuming all databases using this file operate off of default
+// this should always be true of ELMSLN connected systems but just be aware
+// of this in case your doing any prefixing or crazy stuff like connecting to
+// multiple databases
+$databases['default']['default']['init_commands'] = array(
+  'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
+);
+
+// fast 404 to make advagg happy in the event fast 404 is default
+// we may do this in the future, right now just make sure the setting is correct
+$conf['404_fast_paths_exclude'] = '/\/(?:styles)\// to /\/(?:styles|advagg_(cs|j)s)\//';
