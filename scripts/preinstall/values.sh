@@ -7,6 +7,7 @@ travis
 /etc/crontab
 /etc/apache2/sites-available/elmsln.conf
 /etc/apache2/sites-available/zzz_performance.conf
+yes
 travis
 tc
 online.elmsln.local
