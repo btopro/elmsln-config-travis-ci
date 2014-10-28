@@ -2,7 +2,7 @@
 3
 travis
 /etc/php5/conf.d/apc.ini
-/home/travis/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+"/home/travis/.phpenv/versions/$(phpenv version-name)/etc/php.ini"
 /etc/php5/conf.d/mysql.ini
 /etc/crontab
 /etc/apache2/sites-available/elmsln.conf
