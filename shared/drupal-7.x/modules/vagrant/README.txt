@@ -1,1 +1,0 @@
-Modules specific to getting Vagrant setup and integrated out of the box with things like Bakery module for SSO and Piwik for analytics
